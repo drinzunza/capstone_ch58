@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Notes
+{% endblock %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/notes.css'%}">
+{% endblock %}
+
+
+{% block content %}
+<div class="notes">
+
+    <h1>These are your Notes</h1>
+
+    <div class="list">
+
+        {% for record in note_list %}
+        <div class="record">
+            {% if record.image %}
+            <img src="{{record.image.url}}">
+            {% endif %}
+
+            <div class="data">
+                <h5>{{ record.title }}</h5>
+                <label>By: {{record.author.username}} @ {{record.created_on}}</label>
+
+                <p>{{ record.content|truncatechars:120 }}</p>
+
+                <a class="btn btn-sm btn-outline-primary" href="{% url 'note_detail' record.id %}">View Details &rArr;</a>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+{% endblock %}

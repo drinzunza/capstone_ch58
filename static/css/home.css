@@ -1,0 +1,46 @@
+
+.home {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.home h1 {
+    color:#054467;
+}
+
+.home .main-img {
+    border-radius: 10px;  
+    width: 100%;  
+}
+
+
+.home .section1 {
+    display: flex;
+    align-items: center ;
+    gap:1.3rem;
+}
+
+.home .section1 .info {
+    padding-right: 20px;
+    padding-left: 20px;
+    flex: 1;
+}
+
+.home .section1 .info-right {
+    flex: 1;
+}
+
+@media(max-width:767px) {
+    /* Style for mobiles */
+
+    .home h1 {
+        text-align: center;
+        color: red;
+    }
+
+    .section1 {
+        flex-direction: column;
+        text-align: center;
+    }
+}

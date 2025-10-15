@@ -1,0 +1,83 @@
+
+.notes {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    color:darkcyan;
+    text-align: center;
+    margin: 0;
+}
+
+.record {
+    border: 1px solid #819b9b;
+    border-radius: 4px;
+    margin: 20px 20px;
+    background-color: white;
+
+    display: flex;
+    box-shadow: 0px 1px 3px -1px rgba(58, 62, 62, 0.75);
+}
+
+.record img {
+    max-height: 220px;
+    width: 180px;
+    display: block;
+    border-radius: 4px;
+}
+
+.record .data {
+    flex: auto;
+    padding: 10px;
+    position: relative;
+}
+
+.record h5 {
+    margin-bottom: 0;
+}
+
+.record label {
+    color: #6a6a6a;
+    font-size: 12px;
+}
+
+.record p {
+    margin-top: 12px;
+}
+
+.record button {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+
+/****** NOTE DETAILS *******/
+
+.note-details {
+    max-width: 800px;
+    margin:20px auto;
+    border: 1px solid #9ea9ac;
+    border-radius: 8px;
+    text-align: center;
+
+    padding: 20px 20px;
+    background-color: white;
+}
+
+.note-details img {
+    max-width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.note-details p {
+    text-align: justify;
+    margin-top: 12px;
+}
+
+.note-details label {
+    color: #6e6e6f;
+}

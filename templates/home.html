@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home page
+{% endblock %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="home">
+    <!-- <h1>Hello from Django</h1> -->
+
+    <div class="section1">
+        <div class="info">
+            <h2>Capture ideas. Organize thoughts. Find notes fast.</h2>
+            <p>A clean, focused note-taking app to save ideas, tasks, and research — all in one place.</p>
+
+            <button class="btn btn-primary">Cerate a note</button>
+
+        </div>
+        <div class="info-right">
+            <img class="main-img" src="{% static 'images/who.jpg'%}">
+        </div>
+    </div>
+
+</div>
+{% endblock %}

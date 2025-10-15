@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Signup
+{% endblock %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/signup.css'%}">
+{% endblock %}
+
+
+{% block content %}
+<div class="signup-container">
+    <div class="signup-card">
+        <div class="signup-header">
+            <i class="fas fa-user-plus signup-icon"></i>
+            <h2 class="signup-title">Join Us Today</h2>
+            <p class="signup-subtitle">Create your account to get started</p>
+        </div>
+        
+        <form method="post" class="signup-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="signup-btn">
+                <i class="fas fa-user-plus"></i>
+                Create Account
+            </button>
+        </form>
+
+        <div class="signup-footer">
+            <p>Already have an account? <a href="{% url 'login' %}" class="login-link">Sign in here</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
