@@ -22,6 +22,28 @@ Note Details
     <label>Created on: {{note.created_on}}</label>
 
     <p>{{note.content|linebreaksbr }}</p>
-    
+
+    <hr>
+    <h4>Note Comments</h4>
+    {% for comment in note.comments.all %}
+    <div>
+        <p>{{comment.content}}</p>
+        <smal>by: {{comment.author.username}} on {{comment.created_on }}</smal>
+    </div>
+    {% empty %}
+    <p>This note has no comments yet.</p>
+    {% endfor %}
+
+    <hr>
+    <h4>Add Comment</h4>
+    <form method="post" action="{% url 'create_comment' %}">
+        {% csrf_token %}
+
+        <input type="hidden" name="id" value="{{ note.id }}">
+        <textarea name="content" rows="3"></textarea>
+        <button type="submit" class="btn btn-outline-dark">Post comment</button>
+    </form>
+
+
 </div>
 {% endblock %}

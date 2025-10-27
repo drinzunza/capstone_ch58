@@ -1,6 +1,8 @@
-from django.shortcuts import render
-from django.views.generic import ListView, DetailView
-from .models import Note
+from django.shortcuts import render, redirect
+from django.views.generic import ListView, DetailView, CreateView, View
+from .models import Note, Comment
+from .forms import CreateCommentForm
+
 
 """
 Class-based views:
@@ -24,3 +26,22 @@ class NoteList(ListView):
 class NoteDetail(DetailView):
     model = Note
     template_name = "notes/details.html"
+
+
+class CreateComment(View):
+    def post(self, request):
+        id = request.POST.get("id")
+        content = request.POST.get("content")
+
+        # get the Note object 
+        note = Note.objects.get(pk=id)
+
+        # create the comment
+        Comment.objects.create(
+            note = note,
+            content = content,
+            author = request.user
+        )
+
+        # send back to details page
+        return redirect("note_detail", pk=id)
